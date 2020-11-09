@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Start Test App') {
           steps {
-           sh 'docker compose up'
+           sh 'docker-compose up'
            sh './scripts/test_container.ps1'
           }
 
@@ -42,7 +42,7 @@ pipeline {
 
         stage('Stop Test App') {
           steps {
-           sh 'docker compose down'
+           sh 'docker-compose down'
           }
         }
     }
