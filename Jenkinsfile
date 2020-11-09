@@ -10,8 +10,10 @@ pipeline {
         stage('Docker Build') {
           steps {
             sh 'docker images -a'
-            sh 'docker build -t jenkins-pipeline .'
-            sh 'docker images -a'
+            sh 'pwd'
+            sh 'ls'
+            // sh 'docker build -t jenkins-pipeline .'
+            // sh 'docker images -a'
           }
         }
     }
