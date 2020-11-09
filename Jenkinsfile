@@ -18,5 +18,32 @@ pipeline {
             """
           }
         }
+        stage('Start Test App') {
+          steps {
+           sh 'docker compose up'
+           sh './scripts/test_container.ps1'
+          }
+
+          post {
+            success {
+              echo 'App Started Successfully'
+            }
+            failure {
+              echo 'App Failed to Start'
+            }
+          }
+        }
+
+        stage('Run Tests') {
+          steps {
+           sh 'true'
+          }
+        }
+
+        stage('Stop Test App') {
+          steps {
+           sh 'docker compose down'
+          }
+        }
     }
 }
