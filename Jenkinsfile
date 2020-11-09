@@ -11,9 +11,12 @@ pipeline {
           steps {
             sh 'docker images -a'
             sh 'cd azure-vote/'
-            sh "docker build -t jenkins-pipeline ."
-            sh "cd .."
-            sh 'docker images -a'
+            sh 'cd azure-vote/'
+            sh 'docker build -t jenkins-pipeline .'
+            sh 'cd ..'
+            
+            // sh 'docker build -t jenkins-pipeline .'
+            // sh 'docker images -a'
           }
         }
     }
