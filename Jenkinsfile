@@ -8,8 +8,10 @@ pipeline {
             }
         }
         stage('Docker Build') {
-          sh 'docker images -a'
-          sh 'pwd'
+          steps {
+            sh 'docker images -a'
+            sh 'pwd'
+          }
         }
     }
 }
